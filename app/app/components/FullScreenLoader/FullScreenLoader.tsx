@@ -1,11 +1,24 @@
+import {AnyTypeAnnotation} from '@babel/types';
 import React from 'react';
-import {ImageBackground} from 'react-native';
+import {Animated, ImageBackground, LayoutAnimationProperty} from 'react-native';
 import {fullScreenLoaderImage} from './images';
 import styles from './styles';
 
-const FullScreenLoading = () => {
+type Props = {
+  animated: any;
+};
+
+const FullScreenLoading = ({animated}: Props) => {
   return (
-    <ImageBackground style={styles.wrapper} source={fullScreenLoaderImage} />
+    <Animated.Image
+      style={[
+        styles.wrapper,
+        {
+          opacity: animated,
+        },
+      ]}
+      source={fullScreenLoaderImage}
+    />
   );
 };
 
