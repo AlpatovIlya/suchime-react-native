@@ -2,12 +2,12 @@ import React from 'react';
 import {Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-const Profile = () => {
+const OrderScreen = () => {
   return (
     <SafeAreaView>
-      <Text>Профиль</Text>
+      <Text>Заказ</Text>
     </SafeAreaView>
   );
 };
 
-export default Profile;
+export default OrderScreen;

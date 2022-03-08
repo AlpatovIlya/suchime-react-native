@@ -7,10 +7,18 @@ import {bgImage} from './images';
 import styles from './styles';
 // @ts-expect-error
 import {CONFIRMATION_URL} from '@env';
+import {useDispatch} from 'react-redux';
+import applicationActions from '../../../store/actions/applicationActions';
 
 const SignInScreen = () => {
+  const dispatch = useDispatch();
+
   const onPressConfirmation = () => {
     Linking.openURL(CONFIRMATION_URL);
+  };
+
+  const onPressNextStep = () => {
+    dispatch(applicationActions.setOnBoardingStatus(true));
   };
 
   return (
@@ -19,7 +27,10 @@ const SignInScreen = () => {
         <Image style={styles.logo} source={logoImage} />
         <Text style={styles.title}>Welcome Back</Text>
         <Text style={styles.subTitle}>Sign in to continue</Text>
-        <Button style={styles.button} themeButton="black">
+        <Button
+          style={styles.button}
+          onPress={onPressNextStep}
+          themeButton="black">
           SIGN IN AS GUEST
         </Button>
         <View>

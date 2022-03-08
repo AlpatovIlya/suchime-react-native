@@ -1,41 +1,18 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import React, {useEffect, useState} from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-import {OnBoardingNavigator} from './app/navigators';
+import {applyMiddleware, createStore} from 'redux';
+import thunk from 'redux-thunk';
+import {RootNavigator} from './app/navigators';
 import combineReducers from './app/store/store';
-const store = createStore(combineReducers);
 
-const IS_FINISHT_ONBOARDIND = 'ONBOARDING/IS_FINISHT_ONBOARDIND';
+const store = createStore(combineReducers, applyMiddleware(thunk));
 
 const App = () => {
-  const [loadingApp, setloadingApp] = useState(true);
-  const [isFinishOnBoarding, setisFinishOnBoarding] = useState(false);
-  const onEnterApp = async () => {
-    const isFinishOnBoarding = await AsyncStorage.getItem(
-      IS_FINISHT_ONBOARDIND,
-    );
-    setisFinishOnBoarding(!!isFinishOnBoarding);
-    setloadingApp(false);
-  };
-  useEffect(() => {
-    onEnterApp();
-  }, []);
-
-  if (loadingApp) {
-    return (
-      <SafeAreaView>
-        <Text>.....Загруууууузка</Text>
-      </SafeAreaView>
-    );
-  }
-
   return (
     <Provider store={store}>
       <SafeAreaProvider>
-        <OnBoardingNavigator />
+        <RootNavigator />
       </SafeAreaProvider>
     </Provider>
   );
