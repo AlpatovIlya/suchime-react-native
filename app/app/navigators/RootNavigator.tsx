@@ -1,6 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Animated, Text} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {Animated} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {OnBoardingNavigator} from '.';
 import {FullScreenLoader} from '../components';

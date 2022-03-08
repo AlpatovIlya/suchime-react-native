@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import rootStyles from '../../../rootStyles';
 import {rootTheme} from '../../../themes';
 
 const styles = StyleSheet.create({
@@ -17,7 +16,6 @@ const styles = StyleSheet.create({
     marginBottom: 21,
   },
   title: {
-    fontFamily: rootTheme.fonts.main,
     fontStyle: 'normal',
     fontWeight: '600',
     fontSize: 32,
@@ -26,7 +24,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   subTitle: {
-    ...rootStyles.text,
     color: rootTheme.colors.background,
     fontSize: 18,
     marginBottom: 39,
@@ -36,7 +33,6 @@ const styles = StyleSheet.create({
     marginBottom: 48,
   },
   confirmation: {
-    ...rootStyles.text,
     color: rootTheme.colors.textColorInBlackBackground,
     textAlign: 'center',
     fontWeight: '300',

@@ -1,18 +1,14 @@
 import React from 'react';
 import {Image, ImageBackground, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {useDispatch} from 'react-redux';
 import {Button} from '../../../components';
-import {useOnBoardingNavigation, useTypedSelector} from '../../../hooks';
+import {useOnBoardingNavigation} from '../../../hooks';
 import {logoImage} from '../../../images';
-import {userActions} from '../../../store/actions';
 import {bgImage, titleImage} from './images';
 import styles from './styles';
 
 const WelcomeScreen = () => {
-  const dispatch = useDispatch();
   const navigation = useOnBoardingNavigation();
-  const {user} = useTypedSelector(state => state.user);
 
   const onPressNextStep = () => {
     navigation.navigate('SignIn');

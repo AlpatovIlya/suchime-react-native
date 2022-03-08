@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import rootStyles from '../../../rootStyles';
 import {rootTheme} from '../../../themes';
 
 const styles = StyleSheet.create({
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
     marginBottom: 28,
   },
   description: {
-    ...rootStyles.text,
+    fontSize: 16,
     marginBottom: 47,
     textAlign: 'center',
     alignSelf: 'center',

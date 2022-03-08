@@ -1,6 +1,5 @@
-import {AnyTypeAnnotation} from '@babel/types';
 import React from 'react';
-import {Animated, ImageBackground, LayoutAnimationProperty} from 'react-native';
+import {Animated} from 'react-native';
 import {fullScreenLoaderImage} from './images';
 import styles from './styles';
 

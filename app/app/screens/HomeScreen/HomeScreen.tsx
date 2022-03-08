@@ -1,11 +1,12 @@
 import React from 'react';
 import {Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import rootStyles from '../../rootStyles';
 
 const HomeScreen = () => {
   return (
     <SafeAreaView>
-      <Text>Главная</Text>
+      <Text style={rootStyles.text}>Home</Text>
     </SafeAreaView>
   );
 };

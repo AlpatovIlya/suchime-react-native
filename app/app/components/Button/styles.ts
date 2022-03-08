@@ -11,24 +11,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '600',
   },
-  lightWrapper: {
-    backgroundColor: rootTheme.colors.background,
-  },
-  lightText: {
-    color: rootTheme.colors.main,
-  },
-  subWrapper: {
-    backgroundColor: rootTheme.colors.sub,
-  },
-  subText: {
-    color: rootTheme.colors.textColorInBlackBackground,
-  },
-  blackWrapper: {
-    backgroundColor: rootTheme.colors.main,
-  },
-  blackText: {
-    color: rootTheme.colors.textColorInBlackBackground,
-  },
 });
 
 const lightButtonStyle = StyleSheet.create({
